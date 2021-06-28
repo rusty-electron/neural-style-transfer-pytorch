@@ -2,6 +2,11 @@
 
 Pytorch implementation of the paper titled *A Neural Algorithm of Artistic Style*. 
 
+### Sample output
+
+![out1](./static/out1.png)
+![out2](./static/out2.png)
+
 ### Instructions:
 
 * edit `./config.yml` to modify hyperparameters
@@ -14,6 +19,6 @@ Pytorch implementation of the paper titled *A Neural Algorithm of Artistic Style
 
 * [Paper by Gatys et al.](https://arxiv.org/abs/1508.06576)
 
-### update log
+### Update log
 
 * 2021-06-28 - first upload

@@ -120,8 +120,10 @@ def run_style_transfer(content_path,
             plot_img = init_image.detach().cpu()
             plot_img = deprocess_img(plot_img)
 
+            filename = f"iter-{i+1}.png"
             imageio.imwrite(os.path.join(
-                savepath, f"iter-{i+1}.png"), plot_img)
+                savepath, filename), plot_img)
+            print(f'[INFO] saved {filename} to {savepath}')
             print('Iteration: {}'.format(i+1))
             print('Total loss: {:.4e}, '
                   'style loss: {:.4e}, '
@@ -134,14 +136,14 @@ def run_style_transfer(content_path,
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("-i", "--input-image", "path to input image",
+    ap.add_argument("-i", "--input", help="path to input image",
                     default="./data/Green_Sea_Turtle_grazing_seagrass.jpg")
-    ap.add_argument("-s", "--style-image", "path to image whose style is to be imitated",
+    ap.add_argument("-s", "--style", help="path to image whose style is to be imitated",
                     default="data/The_Great_Wave_off_Kanagawa.jpg")
     args = vars(ap.parse_args())
 
-    run_style_transfer(args["input-image"], 
-                       args["style-image"],
+    run_style_transfer(args["input"], 
+                       args["style"],
                        num_iterations=NUM_ITER,
                        content_weight=CONTENT_WEIGHT, 
                        style_weight=STYLE_WEIGHT, 
