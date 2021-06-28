@@ -1,0 +1,5 @@
+# modify according to need
+num_iterations: 1000
+content_weight: 1e-1
+style_weight: 1e-6
+learning_rate: 5
